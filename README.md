@@ -17,6 +17,23 @@ The use case for this project is when a client uploads a file to an AWS S3 bucke
 - **`data/`:** Sample data for uploading to MinIO.
 - **`requirements.txt`:** Lists Python dependencies for the extended Airflow image.
 
+## Build and Run Instructions
+
+To build the Docker image and run the example Python script:
+
+```bash
+git clone https://github.com/ssoni11/DOCKER-PYTHON-VENV-EXECUTABLE.git
+cd DOCKER-PYTHON-VENV-EXECUTABLE
+
+# Build the Docker image
+docker build -t DOCKER-PYTHON-VENV-EXECUTABLE:[choose version] .
+
+# Run the Docker container
+docker run DOCKER-PYTHON-VENV-EXECUTABLE:[choose version]
+
+# Pulling from Docker Hub
+docker pull sagarsonidockerhub/docker-python-venv-executable
+```
 ## Docker Image Creation
 
 To create the extended Airflow Docker image with necessary dependencies:
