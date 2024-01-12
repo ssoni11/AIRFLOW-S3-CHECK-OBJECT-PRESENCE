@@ -59,20 +59,13 @@ docker run \
 ```
 - Create a bucket on MinIO with read/write access.
 - Upload a sample file from the /data directory to the MinIO bucket.
-- 
+  
 
-## Airflow Initialization
-Use Docker Compose to initialize Apache Airflow along with MinIO:
-```bash
-# Launch Apache Airflow and MinIO containers
-docker-compose up -d
-```
 ## Airflow Connections
-- Create Amazon Web Service connection to connect with MinIO.
-
+- Create Amazon Web Service API connection to connect with MinIO.
 
 ## DAG Execution
-- The Airflow DAG script (dags/minio_sensor_dag.py) checks for the presence of a specific object on MinIO before proceeding to the next task.
+- The Airflow DAG script (dags/DAG-WITH-S3-CHECK_OBJECT_PRESENCE.py) checks for the presence of a specific object on MinIO before proceeding to the next task.
 
 ## Check Python Dependencies
 - To check if AWS S3 dependencies are installed in the Airflow container:
@@ -81,7 +74,7 @@ docker-compose up -d
 docker ps
 
 # Access the Airflow container shell
-docker exec -it [container_id] bash
+docker exec -it [airflow_scheduler_container_id] bash
 
 # Run the following command inside the container
 pip list | grep amazon*
