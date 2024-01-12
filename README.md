@@ -17,7 +17,7 @@ The use case for this project is when a client uploads a file to an AWS S3 bucke
 - **`data/`:** Sample data for uploading to MinIO.
 - **`requirements.txt`:** Lists Python dependencies for the extended Airflow image.
 
-## Build and Run Instructions
+## Build and Run Docker Image Instructions
 
 To build the Docker image and run the example Python script:
 
@@ -42,27 +42,6 @@ docker-compose up -d
 # Pulling from Docker Hub
 docker pull sagarsonidockerhub/docker-python-venv-executable
 -->
-
-## Docker Image Creation
-
-To create the extended Airflow Docker image with necessary dependencies:
-
-```bash
-# Clone Apache Airflow repository
-git clone https://github.com/apache/airflow.git
-
-# Navigate to the Airflow repository
-cd airflow
-
-# Create a requirements file with necessary dependencies
-echo "apache-airflow-providers-amazon==8.15.0" > requirements-extended.txt
-
-# Build the extended Airflow Docker image
-docker build -t extended-airflow -f Dockerfile .
-
-# Navigate back to your project directory
-cd ..
-```
 
 ## MinIO Setup
 
