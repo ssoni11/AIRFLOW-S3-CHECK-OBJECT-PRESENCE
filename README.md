@@ -5,13 +5,13 @@
 
 ## Use Case
 
-This project is specifically designed to address a scenario where our client routinely uploads files to an AWS S3 bucket, both on a daily basis and at varying times. Employing an orchestrated workflow powered by Docker and Python, the Apache Airflow Directed Acyclic Graph (DAG) implemented in minio_sensor_dag.py systematically verifies the presence of the uploaded file on MinIO at predefined intervals. This meticulous validation mechanism is integral to ensuring that subsequent tasks, including file processing or transfer operations, are activated exclusively when the specified file is confirmed to be accessible. The combination of Docker and Python further enhances the robustness and reliability of this intricate design.
+This project is specifically designed to address a scenario where our client routinely uploads files to an AWS S3 bucket, both on a daily basis and at varying times. Employing an orchestrated workflow powered by Docker and Python, the Apache Airflow Directed Acyclic Graph (DAG) implemented in DAG-WITH-S3-CHECK_OBJECT_PRESENCE.py systematically verifies the presence of the uploaded file on MinIO at predefined intervals. This meticulous validation mechanism is integral to ensuring that subsequent tasks, including file processing or transfer operations, are activated exclusively when the specified file is confirmed to be accessible. The combination of Docker and Python further enhances the robustness and reliability of this intricate design.
 
 ## Project Structure
 
 - **`Dockerfile`:** Defines the extended Airflow Docker image with additional dependencies for amazon operators.
 - **`docker-compose.yml`:** Composes the Airflow deployment without MinIO container.
-- **`dags/`:** Contains Airflow DAG script for object check for storage object.
+- **`dags/`:** Contains Airflow DAG script for different initiatives like storage object presence.
 - **`data/`:** Sample data for uploading to MinIO.
 - **`requirements.txt`:** Lists Python dependencies for the extended Airflow image.
 
