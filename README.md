@@ -22,18 +22,27 @@ The use case for this project is when a client uploads a file to an AWS S3 bucke
 To build the Docker image and run the example Python script:
 
 ```bash
-git clone https://github.com/ssoni11/DOCKER-PYTHON-VENV-EXECUTABLE.git
-cd DOCKER-PYTHON-VENV-EXECUTABLE
+git clone https://github.com/ssoni11/AIRFLOW-S3-CHECK-OBJECT-PRESENCE.git
+cd AIRFLOW-S3-CHECK-OBJECT-PRESENCE
 
-# Build the Docker image
-docker build -t DOCKER-PYTHON-VENV-EXECUTABLE:[choose version] .
+# Create a requirements file with necessary dependencies
+echo "apache-airflow-providers-amazon==8.15.0" > requirements-extended.txt
 
-# Run the Docker container
-docker run DOCKER-PYTHON-VENV-EXECUTABLE:[choose version]
+# Build the extended Airflow Docker image
+docker build -t extended-airflow:[choose version] -f Dockerfile .
 
+# Initialize Airflow
+docker-compose up airflow-init
+
+# Run flow in detached mode
+docker-compose up -d
+
+```
+<!--
 # Pulling from Docker Hub
 docker pull sagarsonidockerhub/docker-python-venv-executable
-```
+-->
+
 ## Docker Image Creation
 
 To create the extended Airflow Docker image with necessary dependencies:
