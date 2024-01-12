@@ -3,11 +3,9 @@
 -->
 # Apache Airflow - AWS S3(MinIO) Sensor Example
 
-This project demonstrates using Apache Airflow to check the presence of a specific storage object on AWS S3/MinIO, serving as an AWS S3-compatible storage solution. The project includes the creation of an extended Airflow Docker image and orchestrating the Airflow deployment with Docker Compose.
-
 ## Use Case
 
-The use case for this project is when a client uploads a file to an AWS S3 bucket daily and at any time. The Airflow DAG, implemented in minio_sensor_dag.py, checks for the presence of this file on MinIO at specified time intervals before proceeding to the next task. This ensures that other tasks, such as processing or transferring the file, are triggered only when the specified file is available.
+This project is specifically designed to address a scenario where our client routinely uploads files to an AWS S3 bucket, both on a daily basis and at varying times. Employing an orchestrated workflow powered by Docker and Python, the Apache Airflow Directed Acyclic Graph (DAG) implemented in minio_sensor_dag.py systematically verifies the presence of the uploaded file on MinIO at predefined intervals. This meticulous validation mechanism is integral to ensuring that subsequent tasks, including file processing or transfer operations, are activated exclusively when the specified file is confirmed to be accessible. The combination of Docker and Python further enhances the robustness and reliability of this intricate design.
 
 ## Project Structure
 
