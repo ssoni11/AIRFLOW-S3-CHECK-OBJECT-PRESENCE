@@ -3,7 +3,7 @@
 -->
 # Apache Airflow - AWS S3(MinIO) Sensor Example
 
-This project demonstrates using Apache Airflow to check the presence of a specific storage object on MinIO, a rootless Docker container serving as an AWS S3-compatible storage solution. The project includes the creation of an extended Airflow Docker image and orchestrating the Airflow deployment with Docker Compose.
+This project demonstrates using Apache Airflow to check the presence of a specific storage object on AWS S3/MinIO, serving as an AWS S3-compatible storage solution. The project includes the creation of an extended Airflow Docker image and orchestrating the Airflow deployment with Docker Compose.
 
 ## Use Case
 
