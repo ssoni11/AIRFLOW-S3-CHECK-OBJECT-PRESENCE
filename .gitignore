@@ -1,0 +1,3 @@
+/dags/*
+/logs/*
+!DAG-WITH-S3-CHECK_OBJECT_PRESENCE.py
