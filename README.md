@@ -29,7 +29,7 @@ git clone https://github.com/apache/airflow.git
 cd airflow
 
 # Create a requirements file with necessary dependencies
-echo "boto3==1.18.73" > requirements-extended.txt
+echo "apache-airflow-providers-amazon==8.15.0" > requirements-extended.txt
 
 # Build the extended Airflow Docker image
 docker build -t extended-airflow -f Dockerfile .
